@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root">
+</div>
+<script type="text/babel">
+
+    class H1 extends React.Component {
+        render() {
+            return <h1>Hello {this.props.toWhat}</h1>;
+        }
+    }
+    class Button extends React.Component {
+        render() {
+            return <button onClick={this.eventClick.bind(this)}> Hello </button>;
+        }
+        eventClick(){
+            alert("123456");
+        }
+    }
+
+    class A extends React.Component {
+        render() {
+            return <a href="index.html">Hello</a>;
+        }
+    }
+
+
+    ReactDOM.render(
+        <div>
+            <H1 toWhat="Костя!!!!" />
+            <Button/>
+            <A/>
+        </div>,
+        document.getElementById('root')
+    );
+
+</script>
+</body>
+</html>
