@@ -12,7 +12,7 @@ export class App extends Component {
     }
 
     onChangeHandler = e => {
-        this.setState({ text: e.target.value })
+        this.setState({ text: e.target.value.replace(/\D/, '') })
     }
 
     incHandler = incCount => {
@@ -21,7 +21,12 @@ export class App extends Component {
     }
 
     clearAll= e => {
-        this.setState({ text: '0' })
+        this.setState({
+            text: '0',
+            first : '',
+            mathF : '',
+            resultCalc: ''
+        })
     }
 
     calculate = e => {

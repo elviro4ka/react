@@ -27311,12 +27311,17 @@ var App = function (_Component) {
             mathF: '',
             resultCalc: ''
         }, _this.onChangeHandler = function (e) {
-            _this.setState({ text: e.target.value });
+            _this.setState({ text: e.target.value.replace(/\D/, '') });
         }, _this.incHandler = function (incCount) {
             var newNum = _this.state.text === '0' ? String(incCount) : _this.state.text + incCount;
             _this.setState({ text: newNum });
         }, _this.clearAll = function (e) {
-            _this.setState({ text: '0' });
+            _this.setState({
+                text: '0',
+                first: '',
+                mathF: '',
+                resultCalc: ''
+            });
         }, _this.calculate = function (e) {
             if (_this.state.mathF === '+') {
                 _this.state.resultCalc = Number(_this.state.first) + Number(_this.state.text);
