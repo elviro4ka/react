@@ -27323,17 +27323,18 @@ var App = function (_Component) {
                 resultCalc: ''
             });
         }, _this.calculate = function (e) {
-            if (_this.state.mathF === '+') {
-                _this.state.resultCalc = Number(_this.state.first) + Number(_this.state.text);
-            }
-            if (_this.state.mathF === '-') {
-                _this.state.resultCalc = Number(_this.state.first) - Number(_this.state.text);
-            }
-            if (_this.state.mathF === '*') {
-                _this.state.resultCalc = Number(_this.state.first) * Number(_this.state.text);
-            }
-            if (_this.state.mathF === '/') {
-                _this.state.resultCalc = Number(_this.state.first) / Number(_this.state.text);
+            switch (_this.state.mathF) {
+                case '+':
+                    _this.state.resultCalc = Number(_this.state.first) + Number(_this.state.text);
+                    break;
+                case '-':
+                    _this.state.resultCalc = Number(_this.state.first) - Number(_this.state.text);
+                    break;
+                case '*':
+                    _this.state.resultCalc = Number(_this.state.first) * Number(_this.state.text);
+                    break;
+                case '/':
+                    _this.state.resultCalc = Number(_this.state.first) / Number(_this.state.text);
             }
             _this.setState({
                 first: '',

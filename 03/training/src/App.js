@@ -30,17 +30,19 @@ export class App extends Component {
     }
 
     calculate = e => {
-        if(this.state.mathF === '+'){
-            this.state.resultCalc = Number(this.state.first) + Number(this.state.text)
-        }
-        if(this.state.mathF === '-'){
-            this.state.resultCalc = Number(this.state.first) - Number(this.state.text)
-        }
-        if(this.state.mathF === '*'){
-            this.state.resultCalc = Number(this.state.first) * Number(this.state.text)
-        }
-        if(this.state.mathF === '/'){
-            this.state.resultCalc = Number(this.state.first) / Number(this.state.text)
+        switch (this.state.mathF){
+            case '+' :
+                this.state.resultCalc = Number(this.state.first) + Number(this.state.text)
+                break
+            case '-' :
+                this.state.resultCalc = Number(this.state.first) - Number(this.state.text)
+                break
+            case '*' :
+                this.state.resultCalc = Number(this.state.first) * Number(this.state.text)
+                break
+            case '/':
+                this.state.resultCalc = Number(this.state.first) / Number(this.state.text)
+                break
         }
         this.setState({
             first: '',
